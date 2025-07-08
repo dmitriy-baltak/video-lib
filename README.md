@@ -18,6 +18,7 @@ A full-stack application for browsing and managing a video library with grid lay
 - **Redux Toolkit** with RTK Query for state management
 - **Tailwind CSS** with shadcn/ui components
 - **Zod** - Client-side validation
+- **Vitest** - Testing framework
 
 ## Setup Instructions
 
