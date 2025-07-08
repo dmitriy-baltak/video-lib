@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package videos;
+
+service VideoService {
+  // List videos with optional sorting
+  rpc ListVideos(ListVideosRequest) returns (stream Video) {}
+  
+  // Create a new video
+  rpc CreateVideo(CreateVideoRequest) returns (Video) {}
+}
+
+message ListVideosRequest {
+  enum SortOrder {
+    newest = 0;
+    oldest = 1;
+  }
+  
+  SortOrder sort_by = 1;
+}
+
+message CreateVideoRequest {
+  string title = 1;
+  repeated string tags = 2;
+}
+
+message Video {
+  string id = 1;
+  string title = 2;
+  string thumbnail_url = 3;
+  string created_at = 4;
+  int32 duration = 5;
+  int32 views = 6;
+  repeated string tags = 7;
+}
